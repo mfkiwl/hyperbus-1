@@ -36,7 +36,7 @@ sim_clean:
 	rm -rf work
 
 scripts/compile.tcl: Bender.yml
-	$(call generate_vsim, $@, -t rtl -t test,..)
+	$(call generate_vsim, $@, -t rtl -t test -t hyp_test,..)
 
 build:
 	$(VSIM) -c -do "source scripts/compile.tcl; exit"
